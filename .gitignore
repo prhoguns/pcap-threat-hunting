@@ -1,0 +1,4 @@
+data/traffic.pcap
+data/*.duckdb
+zeek/*.log
+__pycache__/
