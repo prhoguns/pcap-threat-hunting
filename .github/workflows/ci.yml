@@ -1,0 +1,19 @@
+name: CI
+on: [push, pull_request]
+jobs:
+  hunt:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12", cache: pip }
+      - run: pip install -r requirements.txt
+      - name: Generate capture
+        run: python scripts/generate_pcap.py
+      - name: Zeek
+        run: docker run --rm -v "$PWD":/app -w /app/zeek zeek/zeek:7.0 zeek -C -r /app/data/traffic.pcap LogAscii::use_json=T
+      - name: Hunt and score
+        run: |
+          python scripts/build_db.py
+          python scripts/run.py
+          grep -c "| found |" results/SCORECARD.md | grep -q 3
