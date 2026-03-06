@@ -1,5 +1,7 @@
 # PCAP Threat Hunting
 
+_Portfolio sprint timeline: January–September 2026. Reported results retain their actual run dates._
+
 Network threat hunting the way a SOC does it: packet capture → Zeek logs → SQL over the logs to
 find what signature rules cannot see — **beaconing** by timing regularity, **DGA** by DNS entropy,
 **exfiltration** by byte asymmetry — scored against planted ground truth.
