@@ -23,7 +23,7 @@ from pathlib import Path
 from scapy.all import DNS, DNSQR, DNSRR, IP, TCP, UDP, Ether, Raw, RawPcapWriter
 
 random.seed(11)
-START = 1_756_886_400  # 2026-09-03 08:00:00 UTC
+START = 1_756_886_400  # 2025-09-03 08:00:00 UTC
 HOURS = 8
 END = START + HOURS * 3600
 WS = [f"10.10.{random.randint(1, 4)}.{random.randint(10, 250)}" for _ in range(60)]
