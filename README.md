@@ -72,3 +72,7 @@ RFC1918 internal space (`10.%`); edit the `like '10.%'` filters otherwise.
 - Zeek `ssl.log` and JA3/JA4 fingerprints: beacons with a fixed TLS fingerprint across many hosts.
 - Suricata alongside Zeek for the signature side, then a join: which anomalies *also* hit a rule?
 - Stream the conn.log into the [SOC alert analytics](https://github.com/prhoguns/soc-alert-analytics) feature set.
+
+## Acknowledgments
+
+AI tools assisted with documentation and repository organization.
